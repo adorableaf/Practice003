@@ -55,15 +55,20 @@ public class ContactForm extends JFrame {
         public void actionPerformed(ActionEvent e) {
             String name = name_field.getText();
             String email = email_field.getText();
+            String user_check;
 
             String isMale = "Male";
             if (!male.isSelected())
                 isMale = "Female";
 
             boolean checkBox = check.isSelected();
+            if (checkBox)
+                user_check = "Да";
+            else
+                user_check = "Нет";
 
             JOptionPane.showMessageDialog(null, "Ваша почта: " + email +
-                    "\nВаш пол: " + isMale + "\nВы согласны?" + checkBox, "Hello " +
+                    "\nВаш пол: " + isMale + "\nВы согласны? " + user_check, "Hello " +
                     name, JOptionPane.PLAIN_MESSAGE);
         }
     }
